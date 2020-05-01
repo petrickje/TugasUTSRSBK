@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html">      
+<h:head>
+  <title>Formulir Survey Siswa</title>
+  <link href="./css/style.css" rel="stylesheet" type="text/css"/> 
+</h:head>
+
+<h:body>
+  <h:form>
+    <h2>Formulir Survey Siswa</h2>
+      
+        <table>
+      <tr>
+        <td>Nama Depan:</td>
+        <td>
+          <h:inputText label="NamaDepan" 
+                       id="NamaDepan" value="#{employeeBean.namaDepan}" 
+                       required="true"/>
+                         <h:message for="NamaDepan" style="color: red"/>
+        </td>
+      </tr>
+
+       <tr>
+        <td>Nama Belakang:</td>
+        <td>
+          <h:inputText label="NamaBelakang" 
+                       id="NamaBelakang" value="#{employeeBean.namaBelakang}" 
+                       required="true"/>
+                      <h:message for="NamaBelakang" style="color: red"/>
+        </td>
+      </tr>
+      
+      <tr>
+        <td>Alamat Jalan:</td>
+        <td>
+          <h:inputText label="Address"
+                       id="address" value="#{employeeBean.address}"
+                       required="true"/>
+          <h:message for="address" style="color: red"/>
+        </td>
+      </tr>
+      
+      <tr>
+        <td>Kota:</td>
+        <td>
+          <h:inputText label="Kota" 
+                       id="Kota" value="#{employeeBean.kota}" 
+                       required="true"/>
+                       <h:message for="Kota" style="color: red"/>
+        </td>
+      </tr>
+      
+         
+         <tr>
+        <td>Negara Bagian:</td>
+        <td>
+          <h:inputText label="Negara" 
+                       id="Negara" value="#{employeeBean.negara}" 
+                       required="true"/>
+                       <h:message for="Negara" style="color: red"/>
+        </td>
+      </tr>
+      
+               <tr>
+        <td>POS:</td>
+        <td>
+          <h:inputText label="Pos" 
+                       id="Pos" type="number" value="#{employeeBean.pos}" 
+                       required="true"/>
+                       <h:message for="Pos" style="color: red"/>
+        </td>
+      </tr>
+      
+            <tr>
+        <td>No Telepon:</td>
+        <td>
+          <h:inputText label="Mobile Number"
+                       id="mobileno" value="#{employeeBean.mobileNumber}" required="true">
+          </h:inputText>
+          <h:message for="mobileno" style="color: red"/>
+        </td>
+      </tr>
+      
+            <tr>
+        <td>Email Address:</td>
+        <td>
+          <h:inputText label="Email Address"
+                       id="email" value="#{employeeBean.emailAddress}" required="true"
+                       validator="#{employeeBean.validateEmail}"/>
+          <h:message for="email" style="color: red"/>
+        </td>
+      </tr>
+      
+        <tr>
+        <td>Tanggal Survey:</td>
+        <td>
+          <h:inputText label="Date of Birth"
+                       id="tglsurvey" value="#{employeeBean.tglsurvey}" required="true">
+            <f:convertDateTime pattern="MM-dd-yy" />
+          </h:inputText> (mm-dd-yy)
+          <h:message for="tglsurvey" style="color: red"/>
+        </td>
+      </tr>
+      <tr>
+       <td>Apa Yang Kalian Sukai Tentang Kampus?:</td>
+      <td>
+ <h:selectManyCheckbox value="#{employeeBean.suka}">
+         	<f:selectItem itemValue="siswa" itemLabel="siswa" />
+   			<f:selectItem itemValue="lokasi" itemLabel="lokasi" />
+   			<f:selectItem itemValue="kampus" itemLabel="kampus" />
+   			<f:selectItem itemValue="suasana" itemLabel="suasana" />
+   			<f:selectItem itemValue="kamar asrama" itemLabel="kamar asrama" />
+   			<f:selectItem itemValue="olahraga" itemLabel="olahraga" />
+       </h:selectManyCheckbox>
+      </td>
+      </tr>
+      
+
+      
+      <tr>
+        <td>Bagaimana Tertarik Dengan Undip:</td>
+        <td>
+          <h:selectOneRadio label="fasilitas" 
+                            id="fasilitas" value="#{employeeBean.fasilitas}" >
+            <f:selectItem itemLabel="Teman" itemValue="Teman" />
+            <f:selectItem itemLabel="Televisi" itemValue="Televisi" />
+            <f:selectItem itemLabel="Internet" itemValue="Internet" />
+               <f:selectItem itemLabel="Lainnya" itemValue="Lainnya" />
+          </h:selectOneRadio>
+        <h:message for="fasilitas" style="color: red"/>             
+        </td>
+      </tr>
+      
+
+<tr>
+        <td>Apakah Kamu Ingin merekomendasikan??</td>
+        <td>
+          <h:selectOneMenu label="rekomendasi"
+                           value="#{employeeBean.rekomendasi}">
+                           <f:selectItem itemLabel=" " itemValue=" " />
+            <f:selectItem itemLabel="Sangat Mungkin" itemValue="Sangat Mungkin" />
+            <f:selectItem itemLabel="Mungkin" itemValue="Mungkin" />
+            <f:selectItem itemLabel="Tidak Mungkin" itemValue="Tidak Mungkin" />
+          </h:selectOneMenu>
+        </td>
+      </tr>
+      
+      
+      <tr>
+        <td>Komentar Tambahan</td>
+   		 <td><h:inputTextarea value="#{employeeBean.komentar}" cols="30" rows="10" /></td>
+      </tr>
+
+      
+    </table>
+
+    <h:commandButton value="Confirm" action="confirm" />
+  </h:form>
+</h:body>
+</html>

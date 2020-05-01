@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html">      
+<h:head>
+
+  <title>Formulir Survey Siswa</title>
+  <link href="./css/style.css" rel="stylesheet" type="text/css"/> 
+</h:head>
+
+<h:body>
+  <h:form>
+    <h2>Formulir Survey Siswa</h2>
+   
+    	<table>
+			<tr>
+				<td>Nama Depan:</td>
+				<td><h:outputText value="#{employeeBean.namaDepan}" /></td>
+			</tr>
+			<tr>
+				   <td>Nama Belakang:</td>
+				<td><h:outputText value="#{employeeBean.namaBelakang}" /></td>
+			</tr>
+			<tr>
+				 <td>Alamat Jalan:</td>
+				<td><h:outputText value="#{employeeBean.address}" /></td>
+			</tr>
+			<tr>
+				 <td>Kota:</td>
+				<td><h:outputText value="#{employeeBean.kota}" /></td>
+			</tr>
+			<tr>
+				<td>Negara Bagian:</td>
+				<td><h:outputText value="#{employeeBean.negara}" /></td>
+			</tr>
+			<tr>
+				<td>Pos:</td>
+				<td><h:outputText value="#{employeeBean.pos}" /></td>
+			</tr>
+			<tr>
+				<td>No Telepon:</td>
+				<td><h:outputText value="#{employeeBean.mobileNumber}" /></td>
+			</tr>
+			<tr>
+				<td>Email Address:</td>
+				<td><h:outputText value="#{employeeBean.emailAddress}" /></td>
+			</tr>
+			
+			<tr>
+				<td>Tanggal Survey:</td>
+				<td><h:outputText value="#{employeeBean.tglsurvey}" /></td>
+			</tr>
+			<tr>
+				<td>Apa Yang Kalian Sukai Tentang Kampus?:</td>
+				<td><h:outputText value="#{employeeBean.sukaInString}" /></td>
+			</tr>
+			<tr>
+				<td>Bagaimana Tertarik Dengan Undip:</td>
+				<td><h:outputText value="#{employeeBean.fasilitas}" /></td>
+			</tr>
+			
+						<tr>
+		  <td>Apakah Kamu Ingin merekomendasikan??</td>
+				<td><h:outputText value="#{employeeBean.rekomendasi}" /></td>
+			</tr>
+			
+			
+						<tr>
+				<td>Komentar Tambahan:</td>
+				<td><h:outputText value="#{employeeBean.komentar}" /></td>
+			</tr>
+			<tr>
+			</tr>
+		</table>
+	
+    <p>
+  <h:commandButton value="batal" action="formsiswa" />
+    <h:commandButton value="Submit" action="success" /></p>
+  </h:form>
+</h:body>
+</html>
